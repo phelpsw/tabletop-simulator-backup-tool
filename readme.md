@@ -1,12 +1,12 @@
-## (Tabletop Simulator)[http://berserk-games.com/tabletop-simulator/] Backup Tool
+## [Tabletop Simulator](http://berserk-games.com/tabletop-simulator/) Backup Tool
 
 This tool locally downloads all content for tabletop simulator games.  Helpful
 if playing games without internet access or if the original content is taken
 offline.
 
-Initially inspired from this (project)[https://github.com/theFroh/ttsunhoster].
+Initially inspired from this [project](https://github.com/theFroh/ttsunhoster).
 Which was badly broken but provided some helpful insights.  Additionally useful
-was this Tabletop Simulator save file format (reference)[http://tabletopsimulator.gamepedia.com/Save_File_Format].
+was this Tabletop Simulator save file format [reference](http://tabletopsimulator.gamepedia.com/Save_File_Format).
 
 Everything we care about occurs in this directory (ubuntu):
 ```
