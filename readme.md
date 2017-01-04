@@ -54,6 +54,6 @@ As a tree:
 the new game.
  3. Back it up
  ```
-python3 backup.py --output "/home/$USER/My Games/Tabletop Simulator/Mods/" ~/My\ Games/Tabletop\ Simulator/Mods/Workshop/123456789.json
+python backup.py --output ~/My\ Games/Tabletop\ Simulator/Mods/ ~/My\ Games/Tabletop\ Simulator/Mods/Workshop/123456789.json
  ```
 

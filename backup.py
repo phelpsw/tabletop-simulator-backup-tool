@@ -1,11 +1,11 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 import argparse
 import os
 import re
 import json
 import requests
-import urllib.parse
+import urlparse
 
 image_keys = [
     'TableURL',
@@ -33,7 +33,7 @@ image_urls = []
 model_urls = []
 
 def url_to_tts(url):
-    url_path = urllib.parse.urlparse(url).path
+    url_path = urlparse.urlparse(url).path
     url_ext = os.path.splitext(url_path)[1]
     return "".join([c for c in url if c.isalpha() or c.isdigit()]).rstrip() + url_ext
 
