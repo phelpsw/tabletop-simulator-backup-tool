@@ -8,7 +8,7 @@ Initially inspired from this [project](https://github.com/theFroh/ttsunhoster).
 Which was badly broken but provided some helpful insights.  Additionally useful
 was this Tabletop Simulator save file format [reference](http://tabletopsimulator.gamepedia.com/Save_File_Format).
 
-Everything we care about occurs in this directory (ubuntu):
+Everything we care about occurs in this directory (ubuntu/osx):
 ```
 /home/$USER/My Games/Tabletop Simulator/Mods/
 ```
@@ -46,6 +46,24 @@ As a tree:
     │   ├── 912345678.png
     └── WorkshopFileInfos.json
 ```
+
+### Dependencies
+
+#### Ubuntu
+```
+sudo apt-get install python-pip
+sudo pip install requests
+```
+
+#### OSX
+```
+sudo easy_install pip
+sudo pip install requests
+```
+
+### Windows
+
+Not sure
 
 ### Usage
 
