@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import argparse
+import codecs
 import os
 import re
 import json
@@ -58,7 +59,7 @@ def infer_type_and_add(url):
 def parse_dict(_dict):
     for key, value in _dict.items():
         if key == 'SaveName':
-            print("Backing up {}".format(value))
+            print(value)
         elif key in image_keys and value:
             # process image url
             #print("Found image URL {}".format(value))
@@ -85,10 +86,11 @@ def parse_dict(_dict):
 
 
 def parse_tts_custom_object(_filename):
-    with open(_filename, "r") as _file:
+    with codecs.open(_filename, encoding='utf-8') as _file:
         game = json.load(_file)
         if type(game) is not type({}):
-            raise TypeError
+            raise TypeError('Unexpected input file format. {}'.\
+                            format(_filename))
         parse_dict(game)
 
 
@@ -115,7 +117,12 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     for filename in args.json_input:
-        parse_tts_custom_object(filename)
+        try:
+            parse_tts_custom_object(filename)
+        except TypeError as e:
+            print e
+            continue
+
 
     print('Image Count {}'.format(len(image_urls)))
     print('Model Count {}'.format(len(model_urls)))
@@ -143,7 +150,6 @@ if __name__ == '__main__':
     count = 1
     for url in image_urls:
         name = url_to_tts(url)
-        #print(url, name)
         path = os.path.join(image_dir, name)
         download_file(url, path, args.replace)
         print("({}/{}) {}".format(count, total, url))
