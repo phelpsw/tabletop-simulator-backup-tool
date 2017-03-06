@@ -86,6 +86,7 @@ def parse_dict(_dict):
 
 
 def parse_tts_custom_object(_filename):
+    print(_filename)
     with codecs.open(_filename, encoding='utf-8') as _file:
         game = json.load(_file)
         if type(game) is not type({}):
